@@ -2,7 +2,7 @@ package yunwen.exhibition.flickr_challenge
 
 import com.google.gson.annotations.SerializedName
 
-data class Flickr(
+data class FlickrData(
     val items: List<ItemDetail>
 )
 
@@ -15,6 +15,5 @@ data class ItemDetail(
 )
 
 data class Media(
-    @SerializedName("m")
-    val mediaUrl: String
+    @SerializedName("m") val mediaUrl: String
 )

@@ -50,6 +50,6 @@ class MainViewModel : ViewModel() {
 
 sealed class UiState {
     object Loading : UiState()
-    data class Success(val data: Flickr) : UiState()
+    data class Success(val data: FlickrData) : UiState()
     data class Error(val message: String) : UiState()
 }

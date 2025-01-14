@@ -9,5 +9,5 @@ interface ApiService {
         @Query("format") format: String = "json",
         @Query("nojsoncallback") nojsoncallback: Int = -1,
         @Query("tags") tags: String = ""
-    ): Flickr
+    ): FlickrData
 }

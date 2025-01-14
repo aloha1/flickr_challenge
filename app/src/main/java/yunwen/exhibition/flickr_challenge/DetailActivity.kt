@@ -53,7 +53,7 @@ fun ProductDetails(
     description: String,
     published: String
 ) {
-    Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
+    Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
         GlideImage(
             model = image,
             modifier = Modifier.fillMaxWidth().heightIn(max = 300.dp),
@@ -61,8 +61,8 @@ fun ProductDetails(
             contentScale = ContentScale.FillWidth
         )
         Column(
-            verticalArrangement = Arrangement.spacedBy(10.dp),
-            modifier = Modifier.padding(start = 10.dp, end = 10.dp)
+            verticalArrangement = Arrangement.spacedBy(12.dp),
+            modifier = Modifier.padding(start = 12.dp, end = 12.dp)
         ) {
             Text(
                 text = title,
