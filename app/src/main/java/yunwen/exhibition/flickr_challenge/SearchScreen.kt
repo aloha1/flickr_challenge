@@ -43,10 +43,10 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import coil3.compose.AsyncImage
 import coil3.request.ImageRequest
 import coil3.request.crossfade
-import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import yunwen.exhibition.flickr_challenge.Constants.CONTENT_SEARCH
 import yunwen.exhibition.flickr_challenge.Constants.DEFAULT_DEBOUNCE_TIME
 import yunwen.exhibition.flickr_challenge.ui.theme.FlickrColor
 
@@ -73,7 +73,7 @@ fun SearchBar(
     val focusManager = LocalFocusManager.current
     var searchJob: Job? by remember { mutableStateOf(null) }
     val scope = rememberCoroutineScope()
-
+    val context = LocalContext.current
     OutlinedTextField(
         value = searchQuery,
         onValueChange = { newText ->
@@ -94,12 +94,13 @@ fun SearchBar(
         }),
         placeholder = {
             Text(
-                text = "Enter to Search", modifier = Modifier.background(Color.White)
+                text = context.resources.getString(R.string.enter_to_search),
+                modifier = Modifier.background(Color.White)
             )
         },
         leadingIcon = {
             Icon(
-                imageVector = Icons.Default.Search, contentDescription = ""
+                imageVector = Icons.Default.Search, contentDescription = CONTENT_SEARCH
             )
         },
         modifier = modifier
@@ -131,7 +132,6 @@ fun LoadingScreenWithLazyColumn(uiState: UiState, onCLick: (Context, ItemDetail)
     }
 }
 
-@OptIn(ExperimentalGlideComposeApi::class)
 @Composable
 fun MenuItemsList(item: FlickrData, onClick: (Context, ItemDetail) -> Unit) {
     val context = LocalContext.current

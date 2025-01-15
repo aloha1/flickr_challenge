@@ -10,6 +10,7 @@ import kotlinx.coroutines.launch
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import yunwen.exhibition.flickr_challenge.Constants.BASE_URL
+import yunwen.exhibition.flickr_challenge.Constants.INITIAL_STATE
 import yunwen.exhibition.flickr_challenge.Constants.UNKNOWN_ERROR
 import yunwen.exhibition.flickr_challenge.Constants.KEY_AUTHOR
 import yunwen.exhibition.flickr_challenge.Constants.KEY_DESCRIPTION
@@ -18,8 +19,9 @@ import yunwen.exhibition.flickr_challenge.Constants.KEY_PUBLISHED
 import yunwen.exhibition.flickr_challenge.Constants.KEY_TITLE
 
 class MainViewModel : ViewModel() {
-    private val _uiState = MutableStateFlow<UiState>(UiState.Error("please type"))
+    private val _uiState = MutableStateFlow<UiState>(UiState.Error(INITIAL_STATE))
     val uiState: StateFlow<UiState> = _uiState
+
     private val retrofit =
         Retrofit.Builder().baseUrl(BASE_URL).addConverterFactory(GsonConverterFactory.create())
             .build()

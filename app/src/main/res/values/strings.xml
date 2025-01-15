@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Flickr Challenge</string>
+    <string name="enter_to_search">Enter to Search</string>
 </resources>

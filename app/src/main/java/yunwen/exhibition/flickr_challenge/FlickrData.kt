@@ -15,5 +15,6 @@ data class ItemDetail(
 )
 
 data class Media(
-    @SerializedName("m") val mediaUrl: String
+    @SerializedName("m")
+    val mediaUrl: String
 )

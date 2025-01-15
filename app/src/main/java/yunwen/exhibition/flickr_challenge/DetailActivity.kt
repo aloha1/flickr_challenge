@@ -57,7 +57,7 @@ fun ProductDetails(
         GlideImage(
             model = image,
             modifier = Modifier.fillMaxWidth().heightIn(max = 300.dp),
-            contentDescription = "Big",
+            contentDescription = title,
             contentScale = ContentScale.FillWidth
         )
         Column(
