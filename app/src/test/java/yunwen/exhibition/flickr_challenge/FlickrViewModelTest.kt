@@ -1,38 +1,21 @@
 package yunwen.exhibition.flickr_challenge
 
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.test.runTest
+import org.junit.Assert.assertEquals
+import org.junit.Test
+import yunwen.exhibition.flickr_challenge.Constants.INITIAL_STATE
+import yunwen.exhibition.flickr_challenge.ui.FlickrViewModel
+import yunwen.exhibition.flickr_challenge.ui.UiState
+
 class FlickrViewModelTest {
 
     @Test
-
-    fun `testCoroutineFunction`() = runTest {
-
-        val expectedResult = "Test data"
-
-        var actualResult: String? = null
-
-
-
-        // Launch the coroutine you want to test
-
-        launch {
-
-            delay(500) // Simulate a delay
-
-            actualResult = fetchDataFromNetwork() // Your actual suspend function
-
-        }
-
-
-
-        // Advance the virtual time to complete the coroutine
-
-        advanceUntilIdle()
-
-
-
-        // Assert the result
-
-        assertEquals(expectedResult, actualResult)
-
+    fun `test UI State Changes While Loading`() = runTest {
+        val viewModel = FlickrViewModel()
+        assertEquals(UiState.Error(INITIAL_STATE), viewModel.uiState.value)
+        viewModel.search()
+        delay(1000L)
+        assertEquals(UiState.Loading, viewModel.uiState.value)
     }
 }

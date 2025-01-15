@@ -2,6 +2,7 @@ package yunwen.exhibition.flickr_challenge.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
@@ -26,9 +27,9 @@ class FlickrViewModel() : ViewModel() {
     private val flickrApiService = retrofit.create(FlickrApiService::class.java)
 
     fun search(searchQuery: String = "") {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
+            _uiState.value = UiState.Loading
             try {
-                _uiState.value = UiState.Loading
                 val response = flickrApiService.fetchDataByTags(tags = searchQuery)
                 _uiState.value = UiState.Success(response.items)
                 _items.value = response.items
