@@ -5,8 +5,6 @@ import kotlinx.coroutines.test.runTest
 import org.junit.Assert.assertEquals
 import org.junit.Test
 import yunwen.exhibition.flickr_challenge.Constants.INITIAL_STATE
-import yunwen.exhibition.flickr_challenge.ui.FlickrViewModel
-import yunwen.exhibition.flickr_challenge.ui.UiState
 
 class FlickrViewModelTest {
 

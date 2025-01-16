@@ -53,7 +53,9 @@ import kotlinx.coroutines.launch
 import yunwen.exhibition.flickr_challenge.Constants.APP_TITLE
 import yunwen.exhibition.flickr_challenge.Constants.CONTENT_SEARCH
 import yunwen.exhibition.flickr_challenge.Constants.DEFAULT_DEBOUNCE_TIME
+import yunwen.exhibition.flickr_challenge.FlickrViewModel
 import yunwen.exhibition.flickr_challenge.R
+import yunwen.exhibition.flickr_challenge.UiState
 import yunwen.exhibition.flickr_challenge.model.FlickrItem
 
 @Composable

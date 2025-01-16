@@ -1,4 +1,4 @@
-package yunwen.exhibition.flickr_challenge.ui
+package yunwen.exhibition.flickr_challenge
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

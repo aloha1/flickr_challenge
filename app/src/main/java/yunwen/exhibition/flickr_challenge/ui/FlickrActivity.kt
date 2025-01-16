@@ -9,6 +9,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import dagger.hilt.android.AndroidEntryPoint
+import yunwen.exhibition.flickr_challenge.FlickrViewModel
 import yunwen.exhibition.flickr_challenge.ui.theme.FlickrChallengeTheme
 
 @AndroidEntryPoint
